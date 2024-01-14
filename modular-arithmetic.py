@@ -180,6 +180,6 @@ d = pow(b, 2, p) - 4*a*(c-y) % p
 
 (x2, x1) = tonelli_shanks(d, p)
 
-res = pow(((p+1)*(x1-b))//2, 1, p)//a
+res = pow((x1-b)//(2*a), 1, p)
 
 print(long_to_bytes(res))
