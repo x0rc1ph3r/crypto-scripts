@@ -1,5 +1,5 @@
 from pwn import *
-from Crypto.Util.number import long_to_bytes, bytes_to_long
+from Crypto.Util.number import long_to_bytes as l2b, bytes_to_long as b2l
 
 # flag = '灩捯䍔䙻ㄶ形楴獟楮獴㌴摟潦弸弰摤捤㤷慽'
 # # a = ''.join([chr((ord(flag[i]) << 8) + ord(flag[i + 1])) for i in range(0, len(flag), 2)])
@@ -97,8 +97,37 @@ from Crypto.Util.number import long_to_bytes, bytes_to_long
 # b = pow(ct, 3, n)
 # print(b)
 
-a = [172, 209, 217, 196, 199, 200, 213, 214, 147, 219, 148, 222, 199, 148, 214, 196, 214, 214, 150, 208, 197, 207, 148, 209, 202, 194, 197, 148, 209, 151, 213, 148, 200, 214, 194, 148, 214, 194, 203, 151, 213, 199, 224]
-for i in a:
-    print(chr(i - 99),end = '')
+# a = [172, 209, 217, 196, 199, 200, 213, 214, 147, 219, 148, 222, 199, 148, 214, 196, 214, 214, 150, 208, 197, 207, 148, 209, 202, 194, 197, 148, 209, 151, 213, 148, 200, 214, 194, 148, 214, 194, 203, 151, 213, 199, 224]
+# for i in a:
+#     print(chr(i - 99),end = '')
 
 
+# import random
+# from math import gcd
+
+# def is_prime(n, k=5):
+#     if n <= 1:
+#         return False
+#     if n <= 3:
+#         return True
+#     for _ in range(k):
+#         a = random.randint(2, n - 2)
+#         if gcd(a, n) != 1 or pow(a, n - 1, n) != 1:
+#             return False
+#     return True
+
+# def generate_prime(bits):
+#     while True:
+#         p = random.getrandbits(bits)
+#         # Ensure the number is odd
+#         p |= 1
+#         if is_prime(p):
+#             return p
+
+# # Generate two distinct primes of similar bit length
+# bits = 1024  # Change this to desired bit length
+# p = generate_prime(bits)
+# q = generate_prime(bits)
+
+# print(f"p: {p}")
+# print(f"q: {q}")
